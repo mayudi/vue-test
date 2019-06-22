@@ -13,7 +13,7 @@ const routes = [
     children: [{
       path: '',
       component: home,
-      meta: []
+      meta: ['zhuye']
     }]
   }
 ]

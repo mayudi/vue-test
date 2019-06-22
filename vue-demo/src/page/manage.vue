@@ -1,49 +1,35 @@
 <template>
   <div class="fillcontain">
-    <el-container style="height: 100%; border: 1px solid #eee">
-      <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-        <el-menu :default-active="defaultActive" router>
-          <el-menu-item index="manage"><i class="el-icon-menu"></i>首页</el-menu-item>
+    <el-row style="height: 100%; ">
+      <el-col :span="4" style="height: 100%; background-color:rgb(84, 92, 100) ">
+        <el-menu
+          :default-active="defaultActive"
+          background-color="#545C64"
+          text-color="#fff"
+          active-text-color="#ffd04b"
+        >
+          <el-menu-item index="manage">
+            <i class="el-icon-menu"></i>
+            <span slot="title">首页</span>
+          </el-menu-item>
           <el-submenu index="2">
-            <template slot="title"><i class="el-icon-document"></i>数据管理</template>
-            <el-menu-item index="userList">用户列表</el-menu-item>
-            <el-menu-item index="shopList">角色列表</el-menu-item>
-          </el-submenu>
-          <el-submenu index="3">
-            <template slot="title"><i class="el-icon-document"></i>图表</template>
-            <el-menu-item index="userList">用户分布</el-menu-item>
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              导航一
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="1-1">选项1</el-menu-item>
+              <el-menu-item index="1-2">选项2</el-menu-item>
+            </el-menu-item-group>
           </el-submenu>
         </el-menu>
-      </el-aside>
-
-      <el-container>
-       <!-- <el-header style="text-align: right; font-size: 12px">
-          <el-dropdown>
-            <i class="el-icon-setting" style="margin-right: 15px"></i>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>查看</el-dropdown-item>
-              <el-dropdown-item>新增</el-dropdown-item>
-              <el-dropdown-item>删除</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
-          <span>王小虎</span>
-        </el-header>
--->
+      </el-col>
+      <el-col :span="20" style="height: 100%;">
         <keep-alive>
           <router-view></router-view>
         </keep-alive>
-        <el-main>
-          <el-table :data="tableData">
-            <el-table-column prop="date" label="日期" width="140">
-            </el-table-column>
-            <el-table-column prop="name" label="姓名" width="120">
-            </el-table-column>
-            <el-table-column prop="address" label="地址">
-            </el-table-column>
-          </el-table>
-        </el-main>
-      </el-container>
-    </el-container>
+      </el-col>
+    </el-row>
 
   </div>
 </template>
